@@ -1,4 +1,4 @@
-const {createObject, _calcAge} = require('../dayOne')
+const {createObject, _calcAge, _getAddress} = require('../dayOne')
 
 describe('Testing object user creation', () => {
   it('create object with name', () => {
@@ -19,5 +19,18 @@ describe('Testing calc age function', () => {
   it('cal age', () => {
     const response = _calcAge({yearOfBirth: 1996})
     expect(response).toBe(25)
+  })
+})
+
+describe('Testing get address function', () => {
+  it('getAddress', () => {
+    const response = _getAddress({cep: 13187682})
+    expect(typeof response).toBe('object')
+  })
+  
+  it('getAddress must return lat long', () => {
+    const response = _getAddress({cep: 13187682})
+    expect(response.lat).toBe(123321)
+    expect(response.long).toBe(-123321)
   })
 })
