@@ -1,4 +1,4 @@
- module.exports = {createObject, _calcAge, _getAddress}
+ module.exports = {createObject, _calcAge, _getAddress, _sum}
  
  function createObject({name, yearOfBirth}) {
   const Person = {}
@@ -20,4 +20,12 @@ function _getAddress({cep}) {
     lat: 123321,
     long: -123321
   }
+}
+
+function _sum ({std}) {
+  let total = 0
+  std.forEach(s => {
+    total += s.value
+  })
+  return total
 }

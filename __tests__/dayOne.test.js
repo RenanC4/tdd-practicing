@@ -1,4 +1,4 @@
-const {createObject, _calcAge, _getAddress} = require('../dayOne')
+const {createObject, _calcAge, _getAddress, _sum} = require('../dayOne')
 
 describe('Testing object user creation', () => {
   it('create object with name', () => {
@@ -33,4 +33,16 @@ describe('Testing get address function', () => {
     expect(response.lat).toBe(123321)
     expect(response.long).toBe(-123321)
   })
+})
+
+describe('Testing sum object values', () => {
+  it('sum', () => {
+    const std = [
+      {value: 10},
+      {value: -10}
+    ]
+    const response = _sum({std})
+    expect(response).toBe(0)
+  })
+  
 })
